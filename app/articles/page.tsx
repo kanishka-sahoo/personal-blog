@@ -1,9 +1,10 @@
 import Navbar from "@/components/navbar";
 import ArticleListItem from "@/components/articles";
 import { getListOfPosts } from "@/helpers/postHelper";
+import { Post } from "@/helpers/types";
 
 export default function ArticlePage() {
-    const posts = getListOfPosts();
+    const posts: Post[] = getListOfPosts();
 
     return (
         <main className="flex min-h-screen flex-col">

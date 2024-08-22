@@ -1,6 +1,6 @@
 export default function TopArticle(
   { imgsrc, title, subtitle, trunc_desc, link,date }:
-  { imgsrc: string, title: string, subtitle: string, trunc_desc: string, link: string, date: string }
+  { imgsrc: string, title: string, subtitle: string, trunc_desc: string, link: string, date: Date }
 ) {
   const imsrc: string = imgsrc ? imgsrc : "https://placehold.co/600x400";
   return (

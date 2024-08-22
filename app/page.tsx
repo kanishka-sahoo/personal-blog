@@ -1,9 +1,9 @@
 import Navbar from "@/components/navbar";
 import TopArticle from "@/components/top-article";
 import { getListOfPosts } from "@/helpers/postHelper";
-
+import { Post } from "@/helpers/types";
 export default function Home() {
-  const posts = getListOfPosts().slice(0, 3);
+  const posts: Post[] = getListOfPosts().slice(0, 3);
 
   return (
     <main className="flex min-h-screen flex-col">

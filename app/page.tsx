@@ -1,38 +1,26 @@
-import ArticleListItem from "@/components/articles";
-import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import TopArticle from "@/components/top-article";
+import { getListOfPosts } from "@/helpers/postHelper";
 
 export default function Home() {
+  const posts = getListOfPosts().slice(0, 3);
+
   return (
     <main className="flex min-h-screen flex-col">
       <div className="flex flex-col mx-auto container pt-4 max-w-[900px] p-4">
         <Navbar />
         <h1 className="mt-12 text-green-800 text-6xl font-bold">Top Articles</h1>
-        <TopArticle
-          imgsrc=""
-          title="Title Title Title"
-          subtitle="sub sub sub sub sub"
-          trunc_desc="desc desc..."
-          link="#"
-          date="2024-01-01"
-        />
-        <TopArticle
-          imgsrc=""
-          title="Title Title Title"
-          subtitle="sub sub sub sub sub"
-          trunc_desc="desc desc"
-          link="#"
-          date="2024-01-01"
-        />
-        <TopArticle
-          imgsrc=""
-          title="Title Title Title"
-          subtitle="sub sub sub sub sub"
-          trunc_desc="desc desc"
-          link="#"
-          date="2024-01-01"
-        />
+        {posts.map((post) => (
+          <TopArticle
+            key={post.slug}
+            imgsrc={post.thumb}
+            title={post.title}
+            subtitle={post.subtitle}
+            trunc_desc=""
+            link={`${post.slug}`}
+            date={post.date}
+          />
+        ))}
         <a href="/articles" className="text-green-800 text-lg hover:font-semibold">All Articles</a>
       </div>
     </main>

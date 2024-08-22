@@ -9,9 +9,8 @@ export default function TopArticle(
       <div className="w-full flex flex-1 flex-col pl-2">
         <h1 className="text-green-800 text-4xl font-semibold">{title}</h1>
         <h2 className="text-green-800 text-2xl mt-2">{subtitle}</h2>
-        <p className="text-green-800 text-lg">{trunc_desc}</p>
-        <p className="mt-auto text-green-800 text-lg">{date}</p>
-        <a href={link} className="text-green-950 hover:font-semibold">Read More</a>
+        <p className="mt-auto text-green-800 text-lg">{date.toLocaleString()}</p>
+        <a href={`/blog/${link.replace('.md', '')}`} className="text-green-950 hover:font-semibold">Read More</a>
       </div>
     </div>
   );

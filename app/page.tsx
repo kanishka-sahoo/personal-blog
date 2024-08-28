@@ -9,7 +9,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col">
       <div className="flex flex-col mx-auto container pt-4 max-w-[900px] p-4">
         <Navbar />
-        <h1 className="mt-12 text-green-800 text-6xl font-bold">Top Articles</h1>
+        <h1 className="mt-12 text-green-300 text-6xl font-bold">Top Articles</h1>
         {posts.map((post) => (
           <TopArticle
             key={post.slug}
@@ -21,7 +21,7 @@ export default function Home() {
             date={post.date}
           />
         ))}
-        <a href="/articles" className="text-green-800 text-lg hover:font-semibold">All Articles</a>
+        <a href="/blog" className="text-green-500 text-lg hover:font-semibold">All Articles</a>
       </div>
     </main>
   );

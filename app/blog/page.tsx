@@ -7,10 +7,10 @@ export default function ArticlePage() {
     const posts: Post[] = getListOfPosts();
 
     return (
-        <main className="flex min-h-screen flex-col">
+      <main className="flex min-h-screen flex-col">
       <div className="flex flex-col mx-auto container pt-4 max-w-[900px] p-4">
         <Navbar />
-        <h1 className="mt-12 text-green-800 text-6xl font-bold">All Articles</h1>
+        <h1 className="mt-12 text-green-300 text-6xl font-bold">All Articles</h1>
         <div className="mt-4 flex flex-col divide-y divide-dashed">
           {posts.map((post) => (
             <ArticleListItem
